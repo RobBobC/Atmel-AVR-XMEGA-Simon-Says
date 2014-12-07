@@ -7,7 +7,7 @@
 //
 //	Team Celadon Final Project: Simon Says Push-LED Game
 //
-//	Authors: 	Robert Cook
+//	Authors:	Robert Cook
 //				Taylor Hans
 //				Austin Schroder
 //				Ricardo Benitez
