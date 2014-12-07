@@ -20,6 +20,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <signal.h>
 
 //	Included Atmel Software Framework (ASF) library headers
 //	TODO: Figure out all necessary ASF dependencies
@@ -47,6 +48,7 @@ int iMemorySequence[SEQUENCE_SIZE];
 
 //	Counter variable for sequence size
 int iCount = 0;
+int gameOver = 0; // 1 if game over condition is set.
 
 //	LED enumeration
 typedef enum {
@@ -55,6 +57,12 @@ typedef enum {
 	GREEN_LED,
 	BLUE_LED
 } LED_t;
+
+void handler(int signo)
+{
+	// Handler for the interrupt, where if a user does not input anything in the time limit, will trigger game over.
+	return;
+}
 
 //	Generates a random integer for adding to the memory sequence
 int GetRandomNumber(void)
@@ -120,6 +128,40 @@ void DisplaySequence(void)
 	return;
 }
 
+void ReadSequence(void)
+{
+	int inputIndex = 0;
+	int input = 0;
+	int allowance = 3; // How long the user can hesitate before pressing a button.
+	
+	// Setting up the timeout
+	struct sigaction sa;
+	sa.sa_handler = handler;
+	sigemptyset(&sa.sa_mask);
+	sa.sa_flags = 0;
+	sigaction(SIGALRM, &sa, NULL);
+	
+	do
+	{
+		alarm(allowance);
+		if(scanf("%d", &input) == 1) // If a scanf input was received. If not in the allowed time, triggers else statement.
+		{
+			alarm(0); // Cancels the timeout count.
+		}
+		else
+		{
+			input = -1; // Timed out, won't equal 0-4.
+		}
+		
+		if(iMemorySequence[inputIndex] != input) // If the game over should be triggered.
+		{
+			gameOver = 1;
+		}
+		
+		inputIndex++;
+	} while (inputIndex < iCount)
+}
+
 //	Starts a new game
 void Start(void)
 {
@@ -129,6 +171,12 @@ void Start(void)
 	{
 		AddSequenceElement();
 		DisplaySequence();
+		ReadSequence();
+		
+		if(gameOver == 1)
+		{
+			break;
+		}
 	}
 	
 	return;
