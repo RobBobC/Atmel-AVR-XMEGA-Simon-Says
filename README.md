@@ -4,14 +4,12 @@ ECE-412-Final-Project-Simon-Game
 University of Louisville
 Fall 2014
 ECE 412: Introduction to Embedded Systems
+
+Team CELADON: ATxmega256A3BU-XPLAINED - Simon Says Atmel ASF/AVR C Push-LED Game
+
 Authors:
 
-(John) Taylor Hans
-Robert Cook
-Ricardo Benitez
-Austin Schroder
-
-
+(John) Taylor Hans, Robert Cook, Ricardo Benitez, Austin Schroder
 
 Press the Green LED to start a new game.
 
