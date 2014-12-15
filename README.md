@@ -1,15 +1,17 @@
 ECE-412-Final-Project-Simon-Game
 ================================
 
-Simon Says C Game
-
 University of Louisville
 Fall 2014
 ECE 412: Introduction to Embedded Systems
-Authors:  (John) Taylor Hans
-          Robert Cook
-          Ricardo Benitez
-          Austin Schroder
+Authors:
+
+(John) Taylor Hans
+Robert Cook
+Ricardo Benitez
+Austin Schroder
+
+
 
 Press the Green LED to start a new game.
 
