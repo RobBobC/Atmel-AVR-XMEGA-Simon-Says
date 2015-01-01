@@ -1,10 +1,7 @@
+ATxmega256A3BU-XPLAINED Simon Says Atmel ASF/AVR Push-LED Game
+==============================================================
 
-ATxmega256A3BU-XPLAINED - Simon Says Atmel ASF/AVR C Push-LED Game
-==================================================================
-
-Authors:
-
-Taylor Hans, Robert Cook, Ricardo Benitez, Austin Schroder
+Authors: Taylor Hans, Robert Cook, Ricardo Benitez, Austin Schroder
 
 Press the Green LED to start a new game.
 
