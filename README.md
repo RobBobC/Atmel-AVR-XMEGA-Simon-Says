@@ -1,6 +1,6 @@
 Simon Says Pushbutton LEDs
 
-Pushbutton LED's used: https://www.sparkfun.com/products/11964.
+Pushbutton LEDs used: https://www.sparkfun.com/products/11964.
 
 Authors: Taylor Hans, Robert Cook, Ricardo Benitez, Austin Schroder
 
